@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Wpf" Version="21.2.4" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\CommonModule.csproj" />
+    <ProjectReference Include="..\OrgaPlanner.Modules.Calendar\OrgaPlanner.Modules.Calendar.csproj" />
+    <ProjectReference Include="..\OrgaPlanner.Modules.Contacts\OrgaPlanner.Modules.Contacts.csproj" />
+    <ProjectReference Include="..\OrgaPlanner.Modules.Navigation\OrgaPlanner.Modules.Navigation.csproj" />
+  </ItemGroup>
+</Project>

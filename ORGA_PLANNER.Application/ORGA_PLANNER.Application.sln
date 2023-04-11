@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORGA_PLANNER.Application", "ORGA_PLANNER.Application\ORGA_PLANNER.Application.csproj", "{552BAC69-B48E-4722-9F62-5AF15207F9B9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{04614E47-45B9-4C9E-AFB8-F647404E6DB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{05D5D5FD-3C6E-40E2-BFF5-A7FB8AD538A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{736DDAC4-447C-47F5-B2AB-9F92BF2F4452}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrgaPlanner.Modules.Contacts", "OrgaPlanner.Modules.Contacts\OrgaPlanner.Modules.Contacts.csproj", "{F495757B-FD30-4866-995A-7C2DB66B6832}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrgaPlanner.Modules.Navigation", "OrgaPlanner.Modules.Navigation\OrgaPlanner.Modules.Navigation.csproj", "{51B5E90C-9212-4287-8966-010C6E3E2EAF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrgaPlanner.Modules.Calendar", "OrgaPlanner.Modules.Calendar\OrgaPlanner.Modules.Calendar.csproj", "{81E53CE4-65C2-4BF8-A941-C794D4420C27}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonModule", "Common\CommonModule.csproj", "{7F0B5674-8648-4A5E-8D1C-3668931A07D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{552BAC69-B48E-4722-9F62-5AF15207F9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{552BAC69-B48E-4722-9F62-5AF15207F9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{552BAC69-B48E-4722-9F62-5AF15207F9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{552BAC69-B48E-4722-9F62-5AF15207F9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F495757B-FD30-4866-995A-7C2DB66B6832}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F495757B-FD30-4866-995A-7C2DB66B6832}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F495757B-FD30-4866-995A-7C2DB66B6832}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F495757B-FD30-4866-995A-7C2DB66B6832}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B5E90C-9212-4287-8966-010C6E3E2EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B5E90C-9212-4287-8966-010C6E3E2EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B5E90C-9212-4287-8966-010C6E3E2EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B5E90C-9212-4287-8966-010C6E3E2EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E53CE4-65C2-4BF8-A941-C794D4420C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E53CE4-65C2-4BF8-A941-C794D4420C27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E53CE4-65C2-4BF8-A941-C794D4420C27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E53CE4-65C2-4BF8-A941-C794D4420C27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0B5674-8648-4A5E-8D1C-3668931A07D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0B5674-8648-4A5E-8D1C-3668931A07D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0B5674-8648-4A5E-8D1C-3668931A07D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0B5674-8648-4A5E-8D1C-3668931A07D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{552BAC69-B48E-4722-9F62-5AF15207F9B9} = {05D5D5FD-3C6E-40E2-BFF5-A7FB8AD538A7}
+		{736DDAC4-447C-47F5-B2AB-9F92BF2F4452} = {04614E47-45B9-4C9E-AFB8-F647404E6DB7}
+		{F495757B-FD30-4866-995A-7C2DB66B6832} = {736DDAC4-447C-47F5-B2AB-9F92BF2F4452}
+		{51B5E90C-9212-4287-8966-010C6E3E2EAF} = {736DDAC4-447C-47F5-B2AB-9F92BF2F4452}
+		{81E53CE4-65C2-4BF8-A941-C794D4420C27} = {736DDAC4-447C-47F5-B2AB-9F92BF2F4452}
+		{7F0B5674-8648-4A5E-8D1C-3668931A07D0} = {04614E47-45B9-4C9E-AFB8-F647404E6DB7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBB1F06B-AFA1-4710-B4E8-84F7FA9873A5}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,10 @@
+﻿<dxr:RibbonPage x:Class="OrgaPlanner.Modules.Navigation.Menus.HomeTabView"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+                xmlns:local="clr-namespace:OrgaPlanner.Modules.Navigation.Menus"
+                xmlns:prism="http://prismlibrary.com/"
+                prism:ViewModelLocator.AutoWireViewModel="True"
+                Caption="Login">
+
+</dxr:RibbonPage>

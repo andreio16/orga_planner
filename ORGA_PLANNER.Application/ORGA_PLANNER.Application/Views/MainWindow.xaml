@@ -1,0 +1,57 @@
+﻿<Window x:Class="ORGA_PLANNER.Application.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+        xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        xmlns:common="clr-namespace:CommonModule;assembly=CommonModule"
+        Title="{Binding Title}"
+        Height="auto"
+        Width="auto">
+
+    <DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="41*"
+                                  MinWidth="800" />
+                <ColumnDefinition Width="9*" />
+                <ColumnDefinition Width="10" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="auto"
+                               MinHeight="100" />
+                <RowDefinition Height="*"
+                               MinHeight="450" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+
+            <!--#region Row 1 Ribbon design -->
+            <dxb:BarManager Grid.RowSpan="2"
+                            Grid.ColumnSpan="5">
+                <dxr:RibbonControl>
+                    <dxr:RibbonDefaultPageCategory prism:RegionManager.RegionName="{x:Static common:RegionNames.RibbonRegion}"/>
+                </dxr:RibbonControl>
+            </dxb:BarManager>
+            <!--#endregion-->
+
+            <!--#region Row 2 LeftBar design -->
+            <DockPanel Grid.Row="2"
+                       Grid.Column="1">
+                <ContentControl prism:RegionManager.RegionName="{x:Static common:RegionNames.ContactsRegion}" />
+            </DockPanel>
+            <!--#endregion-->
+
+            <!--#region Row 2 Calendar/Edit View design -->
+            <DockPanel Grid.Row="2"
+                       Grid.Column="2"
+                       Grid.ColumnSpan="2">
+                <ContentControl prism:RegionManager.RegionName="{x:Static common:RegionNames.ContentRegion}" />
+            </DockPanel>
+            <!--#endregion-->
+        </Grid>
+    </DockPanel>
+</Window>

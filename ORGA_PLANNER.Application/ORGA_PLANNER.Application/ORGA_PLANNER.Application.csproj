@@ -7,9 +7,11 @@
   <ItemGroup>
     <PackageReference Include="DevExpress.Wpf" Version="21.2.4" />
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+    <PackageReference Include="WPFLocalizeExtension" Version="3.10.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\CommonModule.csproj" />
+    <ProjectReference Include="..\Common\BusinessCore.csproj" />
+    <ProjectReference Include="..\ModuleStyles\ModuleStyles.csproj" />
     <ProjectReference Include="..\OrgaPlanner.Modules.Calendar\OrgaPlanner.Modules.Calendar.csproj" />
     <ProjectReference Include="..\OrgaPlanner.Modules.Contacts\OrgaPlanner.Modules.Contacts.csproj" />
     <ProjectReference Include="..\OrgaPlanner.Modules.Navigation\OrgaPlanner.Modules.Navigation.csproj" />

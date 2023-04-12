@@ -1,14 +1,8 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Prism.Mvvm;
 
 namespace OrgaPlanner.Modules.Contacts.ViewModels
 {
-    public class ViewAViewModel : BindableBase
+    public class ContactsPanelViewModel : BindableBase
     {
         private string _message;
         public string Message
@@ -17,7 +11,7 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public ViewAViewModel()
+        public ContactsPanelViewModel()
         {
             Message = "View Contacts from your Prism Module";
         }

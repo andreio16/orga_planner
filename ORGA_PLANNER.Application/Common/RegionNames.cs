@@ -1,4 +1,4 @@
-﻿namespace CommonModule
+﻿namespace BusinessCore
 {
     public static class RegionNames
     {

@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ModuleStyles;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="/ModuleStyles;component/Styles/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="TextBlock"
+           x:Key="WrappedText">
+        <Setter Property="TextWrapping"
+                Value="Wrap" />
+        <Setter Property="TextAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalAlignment"
+                Value="Left" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="FontSize"
+                Value="{DynamicResource DefaultFontSize}" />
+        <Setter Property="FontFamily"
+                Value="{DynamicResource DefaultFontFamily}" />
+        <Setter Property="FontWeight"
+                Value="{DynamicResource DefaultBoldFontWeight}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource TextBlockForeground}" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource Gray}" />
+    </Style>
+</ResourceDictionary>

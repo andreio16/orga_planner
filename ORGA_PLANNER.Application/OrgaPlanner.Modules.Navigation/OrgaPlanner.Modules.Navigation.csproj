@@ -2,12 +2,14 @@
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+	  <AssemblyName>NavigationModule</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DevExpress.Wpf" Version="21.2.4" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="WPFLocalizeExtension" Version="3.10.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\CommonModule.csproj" />
+    <ProjectReference Include="..\Common\BusinessCore.csproj" />
   </ItemGroup>
 </Project>

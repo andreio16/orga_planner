@@ -1,4 +1,4 @@
-﻿using CommonModule;    
+﻿using BusinessCore;    
 using OrgaPlanner.Modules.Contacts.Views;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -22,7 +22,7 @@ namespace OrgaPlanner.Modules.Contacts
         #region Methods
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RegisterViewWithRegion(RegionNames.ContactsRegion, typeof(ViewA));
+            _regionManager.RegisterViewWithRegion(RegionNames.ContactsRegion, typeof(ContactsPanel));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

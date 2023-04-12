@@ -1,4 +1,4 @@
-﻿using CommonModule;
+﻿using BusinessCore;
 using OrgaPlanner.Modules.Calendar.Views;
 using Prism.Ioc;
 using Prism.Modularity;

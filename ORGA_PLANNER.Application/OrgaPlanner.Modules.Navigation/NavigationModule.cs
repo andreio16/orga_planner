@@ -1,4 +1,4 @@
-﻿using CommonModule;
+﻿using BusinessCore;
 using OrgaPlanner.Modules.Navigation.Menus;
 using Prism.Ioc;
 using Prism.Modularity;

@@ -2,12 +2,32 @@
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
+	<AssemblyName>ContactsModule</AssemblyName>
   </PropertyGroup>
+	
   <ItemGroup>
     <PackageReference Include="DevExpress.Wpf" Version="21.2.4" />
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="WPFLocalizeExtension" Version="3.10.0" />
   </ItemGroup>
+	
   <ItemGroup>
-    <ProjectReference Include="..\Common\CommonModule.csproj" />
+    <ProjectReference Include="..\Common\BusinessCore.csproj" />
+    <ProjectReference Include="..\ModuleStyles\ModuleStyles.csproj" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <Compile Update="Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+	
+  <ItemGroup>
+    <EmbeddedResource Update="Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

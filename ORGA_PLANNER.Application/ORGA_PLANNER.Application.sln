@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrgaPlanner.Modules.Navigat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrgaPlanner.Modules.Calendar", "OrgaPlanner.Modules.Calendar\OrgaPlanner.Modules.Calendar.csproj", "{81E53CE4-65C2-4BF8-A941-C794D4420C27}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonModule", "Common\CommonModule.csproj", "{7F0B5674-8648-4A5E-8D1C-3668931A07D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessCore", "Common\BusinessCore.csproj", "{7F0B5674-8648-4A5E-8D1C-3668931A07D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleStyles", "ModuleStyles\ModuleStyles.csproj", "{18CAC82D-A19A-4BA8-9F2A-2987B1E1E9EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{7F0B5674-8648-4A5E-8D1C-3668931A07D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F0B5674-8648-4A5E-8D1C-3668931A07D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F0B5674-8648-4A5E-8D1C-3668931A07D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18CAC82D-A19A-4BA8-9F2A-2987B1E1E9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18CAC82D-A19A-4BA8-9F2A-2987B1E1E9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18CAC82D-A19A-4BA8-9F2A-2987B1E1E9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18CAC82D-A19A-4BA8-9F2A-2987B1E1E9EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +62,7 @@ Global
 		{51B5E90C-9212-4287-8966-010C6E3E2EAF} = {736DDAC4-447C-47F5-B2AB-9F92BF2F4452}
 		{81E53CE4-65C2-4BF8-A941-C794D4420C27} = {736DDAC4-447C-47F5-B2AB-9F92BF2F4452}
 		{7F0B5674-8648-4A5E-8D1C-3668931A07D0} = {04614E47-45B9-4C9E-AFB8-F647404E6DB7}
+		{18CAC82D-A19A-4BA8-9F2A-2987B1E1E9EE} = {04614E47-45B9-4C9E-AFB8-F647404E6DB7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CBB1F06B-AFA1-4710-B4E8-84F7FA9873A5}

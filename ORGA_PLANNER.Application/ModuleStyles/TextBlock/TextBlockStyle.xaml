@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/ModuleStyles;component/Styles/Fonts.xaml" />
-        <ResourceDictionary Source="/ModuleStyles;component/Styles/Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ModuleStyles;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/ModuleStyles;component/Styles/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="TextBlock"
            x:Key="WrappedText">

@@ -4,23 +4,23 @@
         <ResourceDictionary Source="pack://application:,,,/ModuleStyles;component/Styles/Fonts.xaml" />
         <ResourceDictionary Source="pack://application:,,,/ModuleStyles;component/Styles/Colors.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    <Style TargetType="TextBlock"
-           x:Key="WrappedText">
+    <Style TargetType="TextBox"
+           x:Key="WrappedSearchText">
         <Setter Property="TextWrapping"
                 Value="Wrap" />
         <Setter Property="TextAlignment"
-                Value="Center" />
-        <Setter Property="HorizontalAlignment"
                 Value="Left" />
+        <Setter Property="HorizontalAlignment"
+                Value="Stretch" />
         <Setter Property="VerticalAlignment"
-                Value="Center" />
+                Value="Stretch" />
         <Setter Property="FontSize"
                 Value="{DynamicResource DefaultFontSize}" />
         <Setter Property="FontFamily"
                 Value="{DynamicResource DefaultFontFamily}" />
         <Setter Property="FontWeight"
-                Value="{DynamicResource DefaultBoldFontWeight}" />
+                Value="{DynamicResource DefaultHeaderFontWeight}" />
         <Setter Property="Foreground"
-                Value="{DynamicResource PrimaryForeground}" />
+                Value="{DynamicResource Blue}" />
     </Style>
 </ResourceDictionary>

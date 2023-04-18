@@ -1,19 +1,49 @@
-﻿using Prism.Mvvm;
+﻿using BusinessCore.Factories;
+using BusinessCore.Models;
+using Prism.Mvvm;
+using System.Collections.Generic;
+using System.Windows.Documents;
 
 namespace OrgaPlanner.Modules.Contacts.ViewModels
 {
     public class ContactsPanelViewModel : BindableBase
     {
-        private string _message;
-        public string Message
+        #region Fields
+
+        private bool areClientsActive;
+
+        private List<ClientDTO> clients;
+
+        #endregion
+
+        #region Properties
+
+        public bool ClientsActiveStatus
         {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
+            get { return areClientsActive; }
+            set { SetProperty(ref this.areClientsActive, value); }
         }
+
+        public List<ClientDTO> Clients 
+        { 
+            get { return clients; }
+            set { SetProperty(ref this.clients, value); }
+        }
+
+        #endregion
+
+        #region Constructor
 
         public ContactsPanelViewModel()
         {
-            Message = "View Contacts from your Prism Module";
+            areClientsActive = true;
+            clients = ClientFactory.GetClientList();
         }
+
+        #endregion
+
+        #region Methods
+
+        #endregion
     }
 }

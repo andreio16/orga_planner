@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ModuleStyles;component/Styles/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <DataTemplate x:Key="ToggleButtonBorderTemplate">
+        <Border x:Name="Border"
+                Width="44"
+                HorizontalAlignment="Left"
+                Background="{StaticResource ToggleBorderBackground}"
+                BorderThickness="2"
+                BorderBrush="{StaticResource ToggleBorderBrush}"
+                CornerRadius="10" />
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton}}"
+                         Value="True">
+                <Setter Property="Background"
+                        TargetName="Border"
+                        Value="{StaticResource ToggleButtonCheckedBackground}" />
+                <Setter Property="BorderThickness"
+                        TargetName="Border"
+                        Value="0" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    <DataTemplate x:Key="ToggleButtonThumbTemplate">
+        <Ellipse x:Name="Thumb"
+                 Fill="{StaticResource ToggleBorderBrush}"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center"
+                 Width="10"
+                 Height="10"
+                 Margin="5,0" />
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=ToggleButton}}"
+                         Value="True">
+                <Setter Property="Fill"
+                        TargetName="Thumb"
+                        Value="{StaticResource ToggleButtonUnCheckedBackground}" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+</ResourceDictionary>

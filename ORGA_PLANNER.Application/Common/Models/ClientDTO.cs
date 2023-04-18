@@ -3,6 +3,7 @@
     public sealed class ClientDTO
     {
         public int Id { get; set; }
+        public bool isActive { get; set; }
 
         public string Note { get; set; }
 

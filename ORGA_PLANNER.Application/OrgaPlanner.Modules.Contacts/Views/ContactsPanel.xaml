@@ -3,14 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
              xmlns:lex="http://wpflocalizeextension.codeplex.com"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
              xmlns:local="clr-namespace:OrgaPlanner.Modules.Contacts.Views"
              xmlns:constants="clr-namespace:BusinessCore.Models.Constants;assembly=BusinessCore"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True" >
-    <Grid Background="{StaticResource PrimaryBackground}">
+    <Grid Background="{StaticResource PrimaryLightBackground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*"
+                              MinWidth="150"/>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="10"/>
@@ -18,24 +20,67 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
             <RowDefinition Height="20" />
-            <RowDefinition Height="20" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="10" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
+        
         <!--#region Row 1 design -->
         <TextBlock Grid.Row="1"
                    Grid.Column="1"
+                   Style="{StaticResource WrappedText}"
                    Text="{lex:Loc ContactsModule:Strings:SearchLabel}" />
-
+        <!--#endregion-->
+        
+        <!--#region Row 2 design -->
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 Grid.ColumnSpan="2"
+                 Style="{StaticResource WrappedSearchText}" />
+        
         <dx:SimpleButton Grid.Row="2"
                          Grid.Column="3"
                          Glyph="{dx:DXImage {x:Static constants:DevExpressIconPaths.SearchIcon}}">
 
         </dx:SimpleButton>
-        
-            <TextBox Grid.Row="2"
-                     Grid.Column="1"
-                     Grid.ColumnSpan="2" MinWidth="150"/>
-            <!--#endregion-->
+        <!--#endregion-->
+
+        <!--#region Row 4 design -->
+        <dxe:ToggleSwitch Grid.Row="4"
+                          Grid.Column="1"
+                          Grid.ColumnSpan="3"
+                          HorizontalAlignment="Right"
+                          VerticalAlignment="Top"
+                          CheckedStateContent="{lex:Loc ContactsModule:Strings:IsClientActive}"
+                          UncheckedStateContent="{lex:Loc ContactsModule:Strings:IsClientInActive}"
+                          IsChecked="{Binding ClientsActiveStatus}">
+
+        </dxe:ToggleSwitch>
+        <!--#endregion-->
+
+        <!--#region Row 5 design -->
+        <ListView Grid.Row="5"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="3"
+                  ItemsSource="{Binding Clients}"
+                  HorizontalContentAlignment="Stretch">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="First Name"
+                                    Width="65"
+                                    DisplayMemberBinding="{Binding FirstName}">
+                    </GridViewColumn>
+                    <GridViewColumn Header="Last Name"
+                                    Width="65"
+                                    DisplayMemberBinding="{Binding LastName}" />
+                    <GridViewColumn Header="Phonenumber"
+                                    Width="85"
+                                    DisplayMemberBinding="{Binding Phonenumber}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--#endregion-->
     </Grid>
 </UserControl>

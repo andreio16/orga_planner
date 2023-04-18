@@ -64,6 +64,9 @@
 
     <SolidColorBrush x:Key="PrimaryBackground"
                      Color="{StaticResource OP_Blue}" />
+    
+    <SolidColorBrush x:Key="PrimaryLightBackground"
+                     Color="#0173c7" />
 
     <SolidColorBrush x:Key="SelectionBackground"
                      Color="#804472C4" />
@@ -108,9 +111,6 @@
     <!--#region Button colors-->
 
     <SolidColorBrush x:Key="ButtonBackground"
-                     Color="{StaticResource OP_White}" />
-
-    <SolidColorBrush x:Key="ButtonForeground"
                      Color="{StaticResource OP_White}" />
 
     <SolidColorBrush x:Key="ButtonErrorBorder"

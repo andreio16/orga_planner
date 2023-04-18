@@ -61,7 +61,25 @@ namespace OrgaPlanner.Modules.Contacts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Search.
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        internal static string IsClientActive {
+            get {
+                return ResourceManager.GetString("IsClientActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deleted.
+        /// </summary>
+        internal static string IsClientInactive {
+            get {
+                return ResourceManager.GetString("IsClientInactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clients Search.
         /// </summary>
         internal static string SearchLabel {
             get {

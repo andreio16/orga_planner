@@ -13,11 +13,11 @@
     <DockPanel>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="0" />
                 <ColumnDefinition Width="250" />
-                <ColumnDefinition Width="41*"
+                <ColumnDefinition Width="*"
                                   MinWidth="800" />
-                <ColumnDefinition Width="9*" />
+                <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="10" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -32,7 +32,7 @@
             <!--#region Row 1 Ribbon design -->
             <dxb:BarManager Grid.RowSpan="2"
                             Grid.ColumnSpan="5">
-                <dxr:RibbonControl>
+                <dxr:RibbonControl RibbonStyle="Office2019">
                     <dxr:RibbonDefaultPageCategory prism:RegionManager.RegionName="{x:Static common:RegionNames.RibbonRegion}"/>
                 </dxr:RibbonControl>
             </dxb:BarManager>

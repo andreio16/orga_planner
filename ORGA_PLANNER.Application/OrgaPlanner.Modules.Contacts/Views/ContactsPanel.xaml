@@ -38,10 +38,12 @@
         <TextBox Grid.Row="2"
                  Grid.Column="1"
                  Grid.ColumnSpan="2"
-                 Style="{StaticResource WrappedSearchText}" />
+                 Style="{StaticResource WrappedSearchText}" 
+                 Text="{Binding Path=FilterText, UpdateSourceTrigger=PropertyChanged}"/>
         
         <dx:SimpleButton Grid.Row="2"
                          Grid.Column="3"
+                         Command="{Binding SearchCommand}"
                          Glyph="{dx:DXImage {x:Static constants:DevExpressIconPaths.SearchIcon}}">
 
         </dx:SimpleButton>
@@ -64,7 +66,7 @@
         <ListView Grid.Row="5"
                   Grid.Column="1"
                   Grid.ColumnSpan="3"
-                  ItemsSource="{Binding Clients}"
+                  ItemsSource="{Binding ClientsCollectionViewSource}"
                   HorizontalContentAlignment="Stretch">
             <ListView.View>
                 <GridView>

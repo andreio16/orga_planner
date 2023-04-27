@@ -15,6 +15,7 @@
                               MinWidth="150"/>
             <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -38,8 +39,8 @@
         <TextBox Grid.Row="2"
                  Grid.Column="1"
                  Grid.ColumnSpan="2"
-                 Style="{StaticResource WrappedSearchText}" 
-                 Text="{Binding Path=FilterText, UpdateSourceTrigger=PropertyChanged}"/>
+                 Style="{StaticResource WrappedSearchText}"
+                 Text="{Binding Path=FilterText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
         
         <dx:SimpleButton Grid.Row="2"
                          Grid.Column="3"
@@ -47,12 +48,19 @@
                          Glyph="{dx:DXImage {x:Static constants:DevExpressIconPaths.SearchIcon}}">
 
         </dx:SimpleButton>
+        
+        <dx:SimpleButton Grid.Row="2"
+                         Grid.Column="4"
+                         Command="{Binding RefreshCommand}"
+                         Glyph="{dx:DXImage {x:Static constants:DevExpressIconPaths.RefreshIcon}}">
+
+        </dx:SimpleButton>
         <!--#endregion-->
 
         <!--#region Row 4 design -->
         <dxe:ToggleSwitch Grid.Row="4"
                           Grid.Column="1"
-                          Grid.ColumnSpan="3"
+                          Grid.ColumnSpan="4"
                           HorizontalAlignment="Right"
                           VerticalAlignment="Top"
                           CheckedStateContent="{lex:Loc ContactsModule:Strings:IsClientActive}"
@@ -65,7 +73,7 @@
         <!--#region Row 5 design -->
         <ListView Grid.Row="5"
                   Grid.Column="1"
-                  Grid.ColumnSpan="3"
+                  Grid.ColumnSpan="4"
                   ItemsSource="{Binding ClientsCollectionViewSource}"
                   HorizontalContentAlignment="Stretch">
             <ListView.View>

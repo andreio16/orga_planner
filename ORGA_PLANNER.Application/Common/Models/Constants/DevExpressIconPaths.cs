@@ -15,7 +15,7 @@
         public static readonly string DownArrowIcon = "SvgImages/Arrows/MoveDown.svg";
         public static readonly string DeleteIcon = "SvgImages/HybridDemoIcons/BottomPanel/HybridDemo_Delete.svg";
         public static readonly string EditIcon = "SvgImages/XAF/Action_Edit.svg";
-        public static readonly string WorkingStatusIcon = "Office2013/Actions/Refresh_32x32.png";
+        public static readonly string RefreshIcon = "Office2013/Actions/Refresh_32x32.png";
         public static readonly string ReleasedStatusIcon = "Office2013/Actions/Apply_32x32.png";
         public static readonly string SearchIcon = "SvgImages/HybridDemoIcons/Editors/HybridDemo_Search Button.svg";
         public static readonly string SendMailIcon = "Office2013/Mail/Send_32x32.png";

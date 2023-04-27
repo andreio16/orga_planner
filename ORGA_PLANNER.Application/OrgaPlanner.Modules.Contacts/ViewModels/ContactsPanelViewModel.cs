@@ -5,6 +5,8 @@ using Prism.Commands;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
+using System.ServiceModel.Channels;
+using System.Windows;
 
 namespace OrgaPlanner.Modules.Contacts.ViewModels
 {
@@ -24,8 +26,6 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
 
         #region Events
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         #endregion
 
         #region Properties
@@ -42,7 +42,6 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
             set 
             {
                 filterText = value;
-                this.clientsCollectionViewSource.View.Refresh();
                 RaisePropertyChanged(nameof(FilterText));
             }
         }
@@ -59,6 +58,7 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
         }
 
         public DelegateCommand SearchCommand { get; private set; }
+        public DelegateCommand RefreshCommand { get; private set; }
 
         #endregion
 
@@ -67,10 +67,13 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
         public ContactsPanelViewModel()
         {
             clients =  new ObservableCollection<ClientDTO>(ClientFactory.GetClientList());
-            areClientsActive = true;
             clientsCollectionViewSource = new CollectionViewSource();
+
             clientsCollectionViewSource.Source = clients;
-            clientsCollectionViewSource.Filter += ClientsCollectionViewSource_Filter;
+            areClientsActive = true;
+
+            InitializeEvents(); 
+            InitializeCommands();
         }
 
         #endregion
@@ -79,29 +82,17 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
 
         public void InitializeProperties()
         {
-
         }
 
         public void InitializeCommands()
         {
             this.SearchCommand = new DelegateCommand(this.OnSearch);
+            this.RefreshCommand = new DelegateCommand(this.OnRefresh);
         }
 
         public void InitializeEvents()
         {
-
-        }
-
-        public void RaisePropertyChanged(string propertyName)
-        {
-            if (this.PropertyChanged != null)
-            {
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-
-        private void OnSearch()
-        {
+            clientsCollectionViewSource.Filter += ClientsCollectionViewSource_Filter;
         }
 
         private void ClientsCollectionViewSource_Filter(object sender, FilterEventArgs e)
@@ -122,6 +113,19 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
                 e.Accepted = false;
             }
         }
+
+        private void OnSearch()
+        {
+            this.clientsCollectionViewSource.View.Refresh();
+        }
+
+        private void OnRefresh()
+        {
+            filterText = string.Empty;
+            this.FilterText = filterText;   
+            this.clientsCollectionViewSource.View.Refresh();
+        }
+
         #endregion
     }
 }

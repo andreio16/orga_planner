@@ -1,12 +1,10 @@
 ﻿using BusinessCore.Factories;
 using BusinessCore.Models;
-using Prism.Mvvm;
 using Prism.Commands;
+using Prism.Mvvm;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
-using System.ServiceModel.Channels;
-using System.Windows;
 
 namespace OrgaPlanner.Modules.Contacts.ViewModels
 {
@@ -58,7 +56,10 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
         }
 
         public DelegateCommand SearchCommand { get; private set; }
+
         public DelegateCommand RefreshCommand { get; private set; }
+
+        public DelegateCommand ActivationStatusCommand { get; private set; }
 
         #endregion
 
@@ -88,29 +89,59 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
         {
             this.SearchCommand = new DelegateCommand(this.OnSearch);
             this.RefreshCommand = new DelegateCommand(this.OnRefresh);
+            this.ActivationStatusCommand = new DelegateCommand(this.OnActivationStatus).ObservesProperty(() => ClientsActiveStatus);
         }
 
         public void InitializeEvents()
         {
-            clientsCollectionViewSource.Filter += ClientsCollectionViewSource_Filter;
+            clientsCollectionViewSource.Filter += CollectionViewSource_FilterActiveClientsByFirstName;
         }
 
-        private void ClientsCollectionViewSource_Filter(object sender, FilterEventArgs e)
+        private void CollectionViewSource_FilterActiveClientsByFirstName(object sender, FilterEventArgs e)
         {
+            ClientDTO client = e.Item as ClientDTO;
+
             if (string.IsNullOrEmpty(FilterText))
             {
-                e.Accepted = true;
+                _ = (client.isActive) ? e.Accepted = true : e.Accepted = false;
                 return;
             }
 
-            ClientDTO client = e.Item as ClientDTO;
-            if (client.FirstName.ToUpper().Contains(FilterText.ToUpper()))
+            if (client != null) 
             {
-                e.Accepted = true;
+
+                if (client.FirstName.ToUpper().Contains(FilterText.ToUpper()) && client.isActive)
+                {
+                    e.Accepted = true;
+                }
+                else
+                {
+                    e.Accepted = false;
+                }
             }
-            else
+        }
+
+        private void CollectionViewSource_FilterInactiveClientsByFirstName(object sender, FilterEventArgs e)
+        {
+            ClientDTO client = e.Item as ClientDTO;
+
+            if (string.IsNullOrEmpty(FilterText))
             {
-                e.Accepted = false;
+                _ = (!client.isActive) ? e.Accepted = true : e.Accepted = false;
+                return;
+            }
+
+            if (client != null)
+            {
+
+                if (client.FirstName.ToUpper().Contains(FilterText.ToUpper()) && !client.isActive)
+                {
+                    e.Accepted = true;
+                }
+                else
+                {
+                    e.Accepted = false;
+                }
             }
         }
 
@@ -123,6 +154,22 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
         {
             filterText = string.Empty;
             this.FilterText = filterText;   
+            this.clientsCollectionViewSource.View.Refresh();
+        }
+
+        private void OnActivationStatus()
+        {
+            if (areClientsActive)
+            {
+                clientsCollectionViewSource.Filter -= CollectionViewSource_FilterInactiveClientsByFirstName;
+                clientsCollectionViewSource.Filter += CollectionViewSource_FilterActiveClientsByFirstName;
+            }
+            else
+            {
+                clientsCollectionViewSource.Filter -= CollectionViewSource_FilterActiveClientsByFirstName;
+                clientsCollectionViewSource.Filter += CollectionViewSource_FilterInactiveClientsByFirstName;
+            }
+
             this.clientsCollectionViewSource.View.Refresh();
         }
 

@@ -65,6 +65,7 @@
                           VerticalAlignment="Top"
                           CheckedStateContent="{lex:Loc ContactsModule:Strings:IsClientActive}"
                           UncheckedStateContent="{lex:Loc ContactsModule:Strings:IsClientInActive}"
+                          Command="{Binding ActivationStatusCommand}"
                           IsChecked="{Binding ClientsActiveStatus}">
 
         </dxe:ToggleSwitch>

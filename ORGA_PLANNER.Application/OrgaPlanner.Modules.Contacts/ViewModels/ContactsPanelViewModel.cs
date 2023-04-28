@@ -1,5 +1,5 @@
 ﻿using BusinessCore.Factories;
-using BusinessCore.Models;
+using BusinessCore.Models.DTOs;
 using Prism.Commands;
 using Prism.Mvvm;
 using System.Collections.ObjectModel;

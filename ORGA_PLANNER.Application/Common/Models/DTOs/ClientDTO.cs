@@ -1,4 +1,4 @@
-﻿namespace BusinessCore.Models
+﻿namespace BusinessCore.Models.DTOs
 {
     public sealed class ClientDTO
     {

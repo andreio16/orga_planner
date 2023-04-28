@@ -1,6 +1,5 @@
-﻿using BusinessCore.Models;
+﻿using BusinessCore.Models.DTOs;
 using System.Collections.Generic;
-using System.Windows.Documents;
 
 namespace BusinessCore.Factories
 {

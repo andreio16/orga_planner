@@ -11,4 +11,8 @@
     <Folder Include="Interfaces\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OrgaPlanner.Database.Storage\OrgaPlanner.Database.Storage.csproj" />
+  </ItemGroup>
+
 </Project>

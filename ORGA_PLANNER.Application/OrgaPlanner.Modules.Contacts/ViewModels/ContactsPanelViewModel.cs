@@ -2,6 +2,8 @@
 using BusinessCore.Models.DTOs;
 using Prism.Commands;
 using Prism.Mvvm;
+
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Data;
@@ -67,12 +69,7 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
 
         public ContactsPanelViewModel()
         {
-            clients =  new ObservableCollection<ClientDTO>(ClientFactory.GetClientList());
-            clientsCollectionViewSource = new CollectionViewSource();
-
-            clientsCollectionViewSource.Source = clients;
-            areClientsActive = true;
-
+            InitializeProperties();
             InitializeEvents(); 
             InitializeCommands();
         }
@@ -83,6 +80,11 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
 
         public void InitializeProperties()
         {
+            clients = new ObservableCollection<ClientDTO>(FetchCoreClients());
+            clientsCollectionViewSource = new CollectionViewSource();
+
+            clientsCollectionViewSource.Source = clients;
+            areClientsActive = true;
         }
 
         public void InitializeCommands()
@@ -171,6 +173,12 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
             }
 
             this.clientsCollectionViewSource.View.Refresh();
+        }
+
+        private IEnumerable<ClientDTO> FetchCoreClients()
+        {
+            CoreFactory core = new CoreFactory();
+            return core.GetClients();
         }
 
         #endregion

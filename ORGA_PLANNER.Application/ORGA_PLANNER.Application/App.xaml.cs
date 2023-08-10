@@ -1,4 +1,5 @@
-﻿using DevExpress.Xpf.Ribbon;
+﻿using DevExpress.Xpf.Accordion;
+using DevExpress.Xpf.Ribbon;
 using ORGA_PLANNER.Application.Adaptors.RegionAdaptors;
 using ORGA_PLANNER.Application.Views;
 using OrgaPlanner.Modules.Calendar;
@@ -36,7 +37,8 @@ namespace ORGA_PLANNER.Application
         protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
         {
             base.ConfigureRegionAdapterMappings(regionAdapterMappings);
-            regionAdapterMappings.RegisterMapping(typeof(RibbonDefaultPageCategory), Container.Resolve<NavigationRibbonRegionAdaptor>());
+            regionAdapterMappings.RegisterMapping(typeof(RibbonDefaultPageCategory), Container.Resolve<NavigationRibbonRegionAdapter>());
+            regionAdapterMappings.RegisterMapping(typeof(AccordionControl), Container.Resolve<AccordionControlBarRegionAdapter>());
         }
     }
 }

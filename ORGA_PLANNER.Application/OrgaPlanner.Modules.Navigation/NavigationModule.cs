@@ -22,7 +22,7 @@ namespace OrgaPlanner.Modules.Navigation
         #region Methods
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            // Only use this for static appearance on the UI
+            // Only use this for static appearance on the UI - View Discovery
             _regionManager.RegisterViewWithRegion(RegionNames.RibbonRegion, typeof(HomeTabView));
         }
 

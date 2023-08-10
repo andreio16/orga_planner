@@ -1,0 +1,10 @@
+﻿<dxa:AccordionItem x:Class="OrgaPlanner.Modules.Contacts.Menus.ContactsBarItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
+             xmlns:local="clr-namespace:OrgaPlanner.Modules.Contacts.Menus"
+             Header="Contacts"
+             ItemsSource="{Binding Items}"
+             DisplayMemberPath="Caption">
+
+</dxa:AccordionItem>

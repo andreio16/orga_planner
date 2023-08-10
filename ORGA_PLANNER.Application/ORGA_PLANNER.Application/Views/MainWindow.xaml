@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
         xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+        xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:common="clr-namespace:BusinessCore;assembly=BusinessCore"
@@ -18,21 +19,21 @@
                 <ColumnDefinition Width="*"
                                   MinWidth="800" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="10" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="10" />
+                <RowDefinition Height="0" />
                 <RowDefinition Height="auto"
                                MinHeight="100" />
                 <RowDefinition Height="*"
                                MinHeight="450" />
-                <RowDefinition Height="10" />
             </Grid.RowDefinitions>
 
             <!--#region Row 1 Ribbon design -->
             <dxb:BarManager Grid.RowSpan="2"
                             Grid.ColumnSpan="5">
-                <dxr:RibbonControl RibbonStyle="Office2019">
+                <dxr:RibbonControl RibbonStyle="Office2019"
+                                   AllowCustomization="False"
+                                   AllowMinimizeRibbon="False">
                     <dxr:RibbonDefaultPageCategory prism:RegionManager.RegionName="{x:Static common:RegionNames.RibbonRegion}"/>
                 </dxr:RibbonControl>
             </dxb:BarManager>
@@ -41,7 +42,9 @@
             <!--#region Row 2 LeftBar design -->
             <DockPanel Grid.Row="2"
                        Grid.Column="1">
-                <ContentControl prism:RegionManager.RegionName="{x:Static common:RegionNames.ContactsRegion}" />
+                <dxa:AccordionControl prism:RegionManager.RegionName="{x:Static common:RegionNames.BarRegion}" 
+                                      ExpandMode="Single"
+                                      SelectedItemChanged="AccordionControl_SelectedItemChanged"/>
             </DockPanel>
             <!--#endregion-->
 

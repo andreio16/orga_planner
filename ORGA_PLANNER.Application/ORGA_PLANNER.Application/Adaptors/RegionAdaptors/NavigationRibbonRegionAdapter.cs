@@ -1,14 +1,15 @@
-﻿using DevExpress.Utils.Extensions;
-using DevExpress.Xpf.Ribbon;
+﻿using DevExpress.Xpf.Ribbon;
+
 using Prism.Regions;
+
 using System;
 
 namespace ORGA_PLANNER.Application.Adaptors.RegionAdaptors
 {
-    public class NavigationRibbonRegionAdaptor : RegionAdapterBase<RibbonDefaultPageCategory>
+    public class NavigationRibbonRegionAdapter : RegionAdapterBase<RibbonDefaultPageCategory>
     {
         #region Constructor
-        public NavigationRibbonRegionAdaptor(IRegionBehaviorFactory regionBehaviorFactory) 
+        public NavigationRibbonRegionAdapter(IRegionBehaviorFactory regionBehaviorFactory) 
             : base(regionBehaviorFactory)
         {
         }

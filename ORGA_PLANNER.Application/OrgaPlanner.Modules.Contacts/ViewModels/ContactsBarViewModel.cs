@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace OrgaPlanner.Modules.Contacts.ViewModels
 {
-    public class ContactsBarItemViewModel : BindableBase
+    public class ContactsBarViewModel : BindableBase
     {
         #region Fiels
         private ObservableCollection<NavigationItem> _items;
@@ -21,20 +21,22 @@ namespace OrgaPlanner.Modules.Contacts.ViewModels
         #endregion
 
         #region Constructor
-        public ContactsBarItemViewModel()
+        public ContactsBarViewModel()
+        {
+            GenerateMenu();
+        }
+        #endregion
+
+        #region Methods
+        private void GenerateMenu()
         {
             Items = new ObservableCollection<NavigationItem>();
 
             Items.Add(new NavigationItem() { Caption = "Clients", NavigationPath = "" });
             Items.Add(new NavigationItem() { Caption = "Employee", NavigationPath = "" });
             Items.Add(new NavigationItem() { Caption = "Providers", NavigationPath = "" });
-
         }
         #endregion
-
-
-
-
 
     }
 }

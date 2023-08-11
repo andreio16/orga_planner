@@ -2,6 +2,7 @@
 
 using OrgaPlanner.Modules.Contacts.Menus;
 using OrgaPlanner.Modules.Contacts.ViewModels;
+using OrgaPlanner.Modules.Contacts.Views;
 
 using Prism.Ioc;
 using Prism.Modularity;
@@ -26,13 +27,15 @@ namespace OrgaPlanner.Modules.Contacts
         #region Methods
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            //_regionManager.RegisterViewWithRegion(RegionNames.PlannerGroupRegion, typeof(ContactsPanel));
-            _regionManager.RegisterViewWithRegion(RegionNames.BarRegion, typeof(ContactsBarItem));
+            _regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(ContactsPanel));
+            _regionManager.RegisterViewWithRegion(RegionNames.BarRegion, typeof(ContactsBar));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            ViewModelLocationProvider.Register<ContactsBarItem, ContactsBarItemViewModel>();
+            ViewModelLocationProvider.Register<ContactsBar, ContactsBarViewModel>();
+
+            containerRegistry.RegisterForNavigation<ContactsPanel, ContactsPanelViewModel>();
         }
         #endregion
     }

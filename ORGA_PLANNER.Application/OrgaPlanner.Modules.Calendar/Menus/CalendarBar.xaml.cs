@@ -7,13 +7,13 @@ namespace OrgaPlanner.Modules.Calendar.Menus
     /// <summary>
     /// Interaction logic for CalendarGroup.xaml
     /// </summary>
-    public partial class CalendarBarItem : AccordionItem, IAccordionControlBar
+    public partial class CalendarBar : AccordionItem, IAccordionControlBar
     {
-        public CalendarBarItem()
+        public CalendarBar()
         {
             InitializeComponent();
         }
 
-        public string DefaultNavigationPath => "Calendar";
+        public string DefaultNavigationPath => "ViewA";
     }
 }

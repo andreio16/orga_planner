@@ -1,9 +1,12 @@
-﻿<dxa:AccordionItem x:Class="OrgaPlanner.Modules.Calendar.Menus.CalendarBarItem"
+﻿<dxa:AccordionItem x:Class="OrgaPlanner.Modules.Calendar.Menus.CalendarBar"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:dxa="http://schemas.devexpress.com/winfx/2008/xaml/accordion"
              xmlns:local="clr-namespace:OrgaPlanner.Modules.Calendar.Menus"
-             Header="Calendar">
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Header="Calendar"
+             ItemsSource="{Binding Items}"
+             DisplayMemberPath="Caption">
     
-    <!--<dxa:AccordionItem Header="Appointments"/>-->
 </dxa:AccordionItem>

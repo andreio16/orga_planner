@@ -7,13 +7,13 @@ namespace OrgaPlanner.Modules.Contacts.Menus
     /// <summary>
     /// Interaction logic for ContactsGroup.xaml
     /// </summary>
-    public partial class ContactsBarItem : AccordionItem, IAccordionControlBar
+    public partial class ContactsBar : AccordionItem, IAccordionControlBar
     {
-        public ContactsBarItem()
+        public ContactsBar()
         {
             InitializeComponent();
         }
 
-        public string DefaultNavigationPath => "Contacts";
+        public string DefaultNavigationPath => "ContactsPanel";
     }
 }

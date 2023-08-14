@@ -1,13 +1,20 @@
-﻿using DevExpress.Xpf.Accordion;
+﻿using BusinessCore.Commands;
+using BusinessCore.Interfaces;
+
+using DevExpress.Xpf.Accordion;
 using DevExpress.Xpf.Ribbon;
+
 using ORGA_PLANNER.Application.Adaptors.RegionAdaptors;
 using ORGA_PLANNER.Application.Views;
+
 using OrgaPlanner.Modules.Calendar;
 using OrgaPlanner.Modules.Contacts;
 using OrgaPlanner.Modules.Navigation;
+
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Regions;
+
 using System.Windows;
 
 namespace ORGA_PLANNER.Application
@@ -24,7 +31,7 @@ namespace ORGA_PLANNER.Application
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-
+            containerRegistry.RegisterSingleton<IApplicationCommands, ApplicationCommands>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)

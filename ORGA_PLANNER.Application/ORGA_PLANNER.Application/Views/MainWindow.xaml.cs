@@ -14,12 +14,14 @@ namespace ORGA_PLANNER.Application.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly IApplicationCommands _applicationCommands;
         private readonly IRegionManager _regionManager;
 
-        public MainWindow(IRegionManager regionManager)
+        public MainWindow(IApplicationCommands applicationCommands, IRegionManager regionManager)
         {
             InitializeComponent();
             this.Title = "Orga-Planner";
+            this._applicationCommands = applicationCommands;
             this._regionManager = regionManager;
         }
 
@@ -29,7 +31,7 @@ namespace ORGA_PLANNER.Application.Views
             if(selection != null) 
             {
                 //TODO: navigate to selection.DefaultNavigationPath 
-                _regionManager.RequestNavigate(RegionNames.ContentRegion, selection.DefaultNavigationPath);
+                _applicationCommands.NavigateCommand.Execute(selection.DefaultNavigationPath);
             }
         }
     }
